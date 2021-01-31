@@ -1,11 +1,12 @@
 import React from 'react'
-import { Header } from './components/';
+import { Banner, Header } from './components/';
 
 import './styles/App.scss';
 
 const App = () => {
     return (
         <div className="App">
+            <Banner />
             <Header />
         </div>
     )
