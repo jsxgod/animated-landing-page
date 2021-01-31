@@ -1,11 +1,12 @@
 import React from 'react'
+import { Header } from './components/';
 
 import './styles/App.scss';
 
 const App = () => {
     return (
-        <div>
-            <h2>Welcome message</h2>
+        <div className="App">
+            <Header />
         </div>
     )
 }
