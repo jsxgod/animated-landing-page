@@ -12,8 +12,8 @@ const App = () => {
 
     return (
         <div className="App">
-            <Banner />
             <Header />
+            <Banner />
         </div>
     )
 }
