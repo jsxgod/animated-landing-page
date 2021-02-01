@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Banner, Header, Products } from './components/';
+import { Banner, Header, Overlay, Products } from './components/';
 
 import './styles/App.scss';
 
@@ -12,6 +12,7 @@ const App = () => {
 
     return (
         <div className="App">
+            <Overlay />
             <Header />
             <Banner />
             <Products />
