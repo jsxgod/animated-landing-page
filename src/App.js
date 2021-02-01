@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { Route } from 'react-router-dom';
 import { Header, Navigation } from './components/';
@@ -48,17 +48,47 @@ const contactRoutes = [
     },
 ]
 
+function debounce(fn, ms) {
+    let timer;
+    return () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            timer = null;
+            fn.apply(this, arguments);
+        }, ms)
+    }
+}
+
 const App = () => {
+    const [dimensions, setDimensions] = useState({
+        height: window.innerHeight,
+        width: window.innerWidth
+    })
 
     useEffect(() => {
-        let vh = window.innerHeight * 0.01;
+        let vh = dimensions.height * 0.01;
         document.documentElement.style.setProperty("--vh", `${vh}px`);
 
+        const debouncedHandleResize = debounce(function handleResize() {
+            setDimensions({
+                height: window.innerHeight,
+                width: window.innerWidth
+            });
+        }, 1000);
+
+        window.addEventListener('resize', debouncedHandleResize);
+
+        return () => {
+            window.removeEventListener('resize', debouncedHandleResize);
+        }
+    }, [dimensions.height])
+
+    useEffect(() => {
         gsap.to("body", {
             duration: 0,
             css: { visibility: "visible"}
         });
-    }, [])
+    }, []);
 
     return (
         <>
