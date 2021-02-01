@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { Route } from 'react-router-dom';
-import { Header } from './components/';
+import { Header, Navigation } from './components/';
 import { About, Approach, Home, Product, Products, Services } from './pages';
 
 import './styles/App.scss';
@@ -13,6 +13,40 @@ const exact_routes = [
     { path: "/services", name: "Services", Component: Services},
     { path: "/products", name: "Products", Component: Products}
 ];
+
+const contactRoutes = [
+    { 
+        name: "Email", 
+        links: [
+            {path: '/contact', description: 'Get in touch with us'},
+            {path: '/audit', description: 'Get a free audit'},
+        ],
+        navLink: true
+    },
+    {
+        name: "Headquarters",
+        links: [
+            'Street',
+            'ZIP City',
+            'Country',
+        ],
+        navLink: false,
+    },
+    {
+        name: "Phone",
+        links: [
+            '+12 (0) 34 567 ',
+        ],
+        navLink: false,
+    },
+    {
+        name: "Legal",
+        links: [
+            'Privacy and Cookies',
+        ],
+        navLink: false,
+    },
+]
 
 const App = () => {
 
@@ -38,6 +72,7 @@ const App = () => {
 
                 <Route path="/product" component={ Product } />
             </div>
+            <Navigation menuRoutes={exact_routes} contactRoutes={contactRoutes} />
         </>
     )
 }
