@@ -24,6 +24,23 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App {
+  z-index: 2;
+  transform: translateY(0);
+  position: relative;
+}
+
+.page {
+  height: 100vh;
+  width: 100%;
+  background: $white;
+
+  .row {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .container {
   width: 1560px;
   min-width: 1560px;
