@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 
 import { ReactComponent as LeftArrow } from '../assets/arrow-left.svg';
 import { ReactComponent as RightArrow } from '../assets/arrow-right.svg';
