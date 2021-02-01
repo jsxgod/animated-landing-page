@@ -29,10 +29,6 @@ const products = [
 ];
 
 const Products = () => {
-    
-    useEffect(() => {
-        console.log(products)
-    }, [])
     return (
         <section className="products">
             <div className="container-fluid">
