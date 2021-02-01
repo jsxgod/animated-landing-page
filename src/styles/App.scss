@@ -11,6 +11,7 @@
 body,
 body,
 html {
+  visibility: hidden;
   user-select: none;
   background: $white;
   overscroll-behavior: none;
