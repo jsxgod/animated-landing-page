@@ -39,7 +39,11 @@
             &.disabled {
                 &:hover{
                     background: rgba(0, 0, 0, .3);
+                    svg {
+                        color: $white;
+                    }
                 }
+                
                 opacity: .3;
             }
 
@@ -52,18 +56,24 @@
         }
     }
     .row {
-        @include media('<=tablet') {
-            flex-direction: column;
-        }
         .product {
             position: relative;
             background: black;
             cursor: pointer;
+            transition: 0.4s ease-in-out;
+
             &:hover {
+                transform: scale(1.05);
+
+                @include media('<=tablet') {
+                    transform: none;
+                }
+
                 .product-image {
                     opacity: 0.4;
                 }
             }
+
             .product-details {
                 width: 33.333vw;
                 height: 50vh;
@@ -82,6 +92,7 @@
                 @include media("<=phone"){
                     padding: 16px;
                 }
+
                 span {
                     margin-top: 156px;
                     font-size: 1.6rem;
@@ -98,6 +109,7 @@
                     }
 
                 }
+
                 h2 {
                     font-size: 2.4rem;
                     line-height: 3.4rem;
@@ -117,6 +129,7 @@
 
                 }
             }
+
             .product-image {
                 top: 0;
                 left: 0;
@@ -130,9 +143,17 @@
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
-
                 }
             }
         }
+        
+        @include media('<=tablet') {
+            flex-direction: column;
+        }
+        
+        @include media(">tablet") {
+            overflow: hidden;
+        }
+        
     }
 }
