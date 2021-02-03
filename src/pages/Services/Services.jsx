@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
 
 const Services = () => {
-    return (
-        <div>
-            <h3>Services page</h3>
+  return (
+    <div className="page">
+      <div className="container">
+        <div className="row">
+          <h3>Services page</h3>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Services
+export default Services;
