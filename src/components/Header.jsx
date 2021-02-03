@@ -1,5 +1,6 @@
 import React from "react";
 import HamburgerMenu from "./util/HamburgerMenu";
+import { NavLink, withRouter } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -7,7 +8,9 @@ const Header = () => {
       <div className="container">
         <div className="row v-center space-between">
           <div className="logo">
-            <a href="/">COMPANY</a>
+            <NavLink to="/" exact>
+              COMPANY
+            </NavLink>
           </div>
           <HamburgerMenu />
         </div>
@@ -16,4 +19,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

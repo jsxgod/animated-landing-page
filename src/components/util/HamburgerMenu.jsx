@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
-import { NavLink, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { ReactComponent as UpArrow } from "../../assets/arrow-up-circle.svg";
 import { animateScroll as scroll } from "react-scroll";
 
 let tl = gsap.timeline();
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({ history }) => {
   const [menuOpened, setMenuOpened] = useState(false);
 
   useEffect(() => {
+    history.listen(() => {
+      setMenuOpened(false);
+    });
+
     if (menuOpened) {
       // run open menu animation
       gsap.to("nav", {
@@ -161,4 +165,4 @@ const HamburgerMenu = () => {
   );
 };
 
-export default HamburgerMenu;
+export default withRouter(HamburgerMenu);
