@@ -59,6 +59,12 @@ function debounce(fn, ms) {
     }
 }
 
+/* 
+    Returns the array object without the first element
+    The object is not mutated in the process 
+*/
+const tail = ([firstElement , ...arr]) => arr;
+
 const App = () => {
     const [dimensions, setDimensions] = useState({
         height: window.innerHeight,
@@ -102,7 +108,7 @@ const App = () => {
 
                 <Route path="/product" component={ Product } />
             </div>
-            <Navigation menuRoutes={exact_routes} contactRoutes={contactRoutes} />
+            <Navigation menuRoutes={tail(exact_routes)} contactRoutes={contactRoutes} />
         </>
     )
 }
