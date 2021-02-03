@@ -21,7 +21,7 @@ const overlayAnimation = (onCompleteFunction) => {
         duration: 1.6,
         height: 0,
         ease: 'expo.inOut',
-        stagger: 0.4
+        stagger: 0.2
     })
     .to('.box-bottom', {
         duration: 1.6,
