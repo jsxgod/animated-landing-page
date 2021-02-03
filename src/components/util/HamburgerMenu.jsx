@@ -139,7 +139,7 @@ const HamburgerMenu = ({ history }) => {
           },
         });
     }
-  }, [menuOpened]);
+  }, [history, menuOpened]);
 
   const openMenu = async () => {
     await scroll.scrollToTop({
